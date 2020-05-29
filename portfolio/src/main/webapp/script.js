@@ -16,13 +16,50 @@
  * Adds a random greeting to the page.
  */
 function addRandomGreeting() {
-  const greetings =
-      ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
+  const facts =
+      ['I have a tabby cat named Poppy.', 'I was in a drumline.', 'I\'m part of Y Fashion House at Yale.', 'I love to paint.', 'I am from Nashville.'];
 
   // Pick a random greeting.
-  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
+  const fact = facts[Math.floor(Math.random() * facts.length)];
 
   // Add it to the page.
-  const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = greeting;
+  const factContainer = document.getElementById('message-container');
+  factContainer.innerText = "You found a hidden fact! \n \n" + fact + "\n \n Reload the page, and this fact will disappear";
 }
+
+// the following is prob not needed
+// 
+// const spans = document.querySelectorAll('h1 span')
+// spans.forEach(span => span.addEventListener ('mouseover',function(e){
+//   span.classList.add('animated', 'rubberBand')
+// }))
+//
+// spans.forEach(span => span.addEventListener ('mouseout',function(e){
+//   span.classList.remove('animated', 'rubberBand')
+// }))
+//
+// const htmlBar = document.querySelector('.bar-html')
+// const jsBar = document.querySelector('.bar-javascript')
+// const pythonBar = document.querySelector('.bar-python')
+// const javaBar = document.querySelector('.bar-java')
+//
+// var t1 = new TimelineLite()
+//
+// t1.fromTo(htmlBar, .75, {width: `calc(0% - 6px)`}, {width: `calc(90% - 6px)`, ease: Power4.easeOut})
+//   .fromTo(jslBar, .75, {width: `calc(0% - 6px)`}, {width: `calc(90% - 6px)`, ease: Power4.easeOut})
+//   .fromTo(pythonlBar, .75, {width: `calc(0% - 6px)`}, {width: `calc(90% - 6px)`, ease: Power4.easeOut})
+//   .fromTo(javalBar, .75, {width: `calc(0% - 6px)`}, {width: `calc(90% - 6px)`, ease: Power4.easeOut})
+//
+//   const contoller = new ScrollMagic.Controller()
+//   const scene = new ScrollMagic.Scene({
+//     triggerElement: '.skills',
+//     triggerHook: 0
+//   })
+//   .setTween(t1)
+//   .addTo(controller)
+
+  // const showRequiredCategory = event => {
+  //   const getId = event.id
+  //   const link = documnet.querySelectorAll()
+  //
+  // }
