@@ -36,6 +36,11 @@ header {
    z-index: 5;
 }
 
+.navbar h1{
+  text-transform: none;
+  color: red;
+}
+
 .navbar a,
 .navbar h1{
   color: white;
@@ -298,10 +303,44 @@ div[class^='tag-'] p{
   position: relative;
   width: 600px;
   height: 20px;
-  border: 2px solid red;
+  border: 2px solid #C0C0C0;
   border-radius: 20px;
   margin-top 7px;
+  background-color: #C0C0C0;
 }
+
+#htmlBar {
+  position: relative;
+  width: 500px;
+  height: 20px;
+  margin-top 7px;
+  background-color: red;
+}
+
+#jsBar {
+  position: relative;
+  width: 250px;
+  height: 20px;
+  margin-top 7px;
+  background-color: red;
+}
+
+#pythonBar {
+  position: relative;
+  width: 400px;
+  height: 20px;
+  margin-top 7px;
+  background-color: red;
+}
+
+#javaBar {
+  position: relative;
+  width: 100px;
+  height: 20px;
+  margin-top 7px;
+  background-color: red;
+}
+
 
 div[class^='bar-'] {
   position: absolute;
@@ -318,18 +357,23 @@ div[class^='bar-'] {
   width: calc(0 - 6px);
 }
 
-/* div[class^='category-'] {
-  margin-top: 50px;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  grid-gap: 20px;
-} */
-
-#reach-red-ball{
-  /* top: +100px; */
-  z-index: -1;
+.contact-me a{
+  color:white;
+  margin-top: 40px;
+  margin-bottom: -30px;
+  position: relative;
 }
 
-.git{
-  float: left;
+.contact-me a:hover {
+  color:#c0c0c0;
+  transform: scale(1.0);
+  transition: transform .5s;
+  position: inherit;
+}
+
+.contact-me {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 40px 20px 40px 20px;
 }

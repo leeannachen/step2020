@@ -27,8 +27,21 @@ function addRandomGreeting() {
   factContainer.innerText = "You found a hidden fact! \n \n" + fact + "\n \n Reload the page, and this fact will disappear";
 }
 
+// adds start from where
+var bar1 = new ProgressBar.Line(htmlBar, {
+  strokeWidth: 4,
+  easing: 'easeInOut',
+  duration: 1400,
+  color: '#FFEA82',
+  trailColor: '#eee',
+  trailWidth: 1,
+  svgStyle: {width: '100%', height: '100%'}
+});
+
+bar1.animate(1.0); 
+
 // the following is prob not needed
-// 
+//
 // const spans = document.querySelectorAll('h1 span')
 // spans.forEach(span => span.addEventListener ('mouseover',function(e){
 //   span.classList.add('animated', 'rubberBand')
