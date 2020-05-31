@@ -15,14 +15,15 @@
 /**
  * Adds a random greeting to the page.
  */
+
 function addRandomGreeting() {
-  const greetings =
-      ['I am a percussionist', 'I have a cat named Poppy', 'I used to be in a drumline', 'I like to paint', 'I am fluent in Chinese', 'I have played piano for most of my life'];
+  const facts =
+      ['I have a tabby cat named Poppy.', 'I was in a drumline.', 'I\'m part of Y Fashion House at Yale.', 'I love to paint.', 'I am from Nashville.'];
 
   // Pick a random greeting.
-  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
+  const fact = facts[Math.floor(Math.random() * facts.length)];
 
   // Add it to the page.
-  const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = greeting;
+  const factContainer = document.getElementById('message-container');
+  factContainer.innerText = "You found a hidden fact! \n \n" + fact + "\n \n Reload the page, and this fact will disappear";
 }

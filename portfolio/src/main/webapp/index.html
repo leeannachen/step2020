@@ -2,38 +2,125 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>My Portfolio</title>
+    <title>Lee's Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Muli:wght@300&display=swap" rel="stylesheet">
     <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/d691fbec03.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <div id="banner">
-        <h1>Welcome to Lee's Portfolio</h1>
-    </div>
-    <div id="content">
-      <img src ="/images/avatar.jpg" alt="Lee's profile picture" class="avatar">
-      <h3 class="center-text">Hi, I'm Lee.</h3> 
-      <p id="about-me"> I am a rising sophomore at Yale University.  I am interested in UX and front-end development.  
-          My goal is to make accessible and intuitive platforms accessible to everyone.  I am majoring in computer science
-          while also taking classes in psychology and visual arts.  In my free time,  I enjoy making music, painting, playing 
-          with my cat, and trying new things.
-          </p> 
-    <div class="box">    
-        <h3 class="center-text">Past Projects and Experiences:</h3> 
-        <div class="row">
-            <div class="column center-text">
-                <a href="https://www.linkedin.com/in/lee-chen-5364a218b/">LinkedIn</a>
-            </div>
-            <div class="column center-text">
-                <a href="https://github.com/leeannachen">Github</a>
-            </div>
-        </div>
-    </div>
-    <div class="box">
-        <h3 class="center-text">Bonus:</h3> 
-        <button onclick="addRandomGreeting()"> Click for a random fact about me :) </button>
-        <div id="greeting-container"></div>
 
+    <div class="container navbar">
+      <header>
+        <div class="nav-name">
+          <a href="#"><h1>Lee</h1></a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
     </div>
+
+    <div class="space" id="top"></div>
+
+    <div class="container main-info-section">
+      <div class="text">
+        <h1>
+          <span>H</span>
+          <span class="m-left">e</span>
+          <span class="m-left">l</span>
+          <span class="m-left">l</span>
+          <span class="m-left">o</span>
+          <span class="m-left">,</span>
+          <br>
+          <span>I</span>
+          <span class="m-left">'</span>
+          <span class="m-left">m</span>
+          <span class="m-left"> </span>
+          <span class="m-left name">L</span>
+          <span class="m-left name">e</span>
+          <span class="m-left name">e</span>
+        </h1>
+        <p>Summer of 2020: virtually interning at Google<br> Part of Student Training in Engineering Program</p>
+        <a href="#about" onclick="addRandomGreeting()">begin</a>
+      </div>
+      <div class="avatar">
+        <img src="./image/avatar.JPG" alt="Lee's profile picture">
+      </div>
+    </div>
+
+    <div class="space" id="about"></div>
+
+    <div class="container about">
+      <h1>About Me</h1>
+      <div class="about-me-info">
+        <p>I am a rising sophomore at Yale University.  I am interested in UX and front-end development.
+        My goal is to make accessible and intuitive technology for everyone but especially for elders.
+        I am majoring in computer science while also taking classes in psychology and visual arts. In my free time, I enjoy making music,
+      creating art, baking pastries, and trying new things. </p>
+      </div>
+        <img src="./image/red.jpg" alt="">
+        <div class="secret-message"><div id="message-container"></div></div>
+      </div>
+    </div>
+
+    <div class="space" id="skills"></div>
+    <div class="container skills">
+      <h1>Skills</h1>
+      <p class="skills-info"> In past projects, I have mainly worked on designating tasks and handling the front-end components.
+        I love art, so I enjoy using HTML/CSS and frameworks like React and Bootstrap to create aesthetic and straightforward platforms.
+        In my free time, I am also taking a self-paced full stack web developer course to enhance my understanding of Python and Django, JavaScript, and jQuery. </p>
+      <div class="html">
+        <div class="tag-html">
+          <p>HTML/CSS</p>
+        </div>
+        <div class="progressbar">
+          <div class="bar-html" id="htmlBar"></div>
+        </div>
+      </div>
+      <div class="html">
+        <div class="tag-javascript">
+          <p>JavaScript</p>
+        </div>
+        <div class="progressbar">
+          <div class="bar-javascript" id="jsBar"></div>
+        </div>
+      </div>
+      <div class="html">
+        <div class="tag-python">
+          <p>Python</p>
+        </div>
+        <div class="progressbar">
+          <div class="bar-python" id="pythonBar"></div>
+        </div>
+      </div>
+      <div class="html">
+        <div class="tag-java">
+          <p>Java</p>
+        </div>
+        <div class="progressbar" >
+          <div class="bar-java" id="javaBar"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="space" id="contact"></div>
+
+    <div class="container contact">
+      <h1>Reach me</h1>
+      <div class="contact-me ">
+        <!-- Not sure why the icons links move down with a:hover -->
+        <a href="https://github.com/leeannachen"><i class="fab fa-github-square fa-5x"></i></a>
+        <a href="https://www.linkedin.com/in/lee-chen/"> <i class="fab fa-linkedin fa-5x"></i> </a>
+        <a href="mailto:chenlee@google.com?subject=website"> <i class="fas fa-envelope-square fa-5x"></i></a>
+      </div>
+        <img src="./image/red.jpg" alt="" id="reach-red-ball">
+    </div>
+  </div>
+
   </body>
 </html>
