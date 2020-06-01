@@ -89,7 +89,7 @@ a {
 
 .main-info-section {
   padding-top: 10vh;
-  height: 100vh;
+  height: 75vh;
 }
 
 .text {
@@ -160,10 +160,29 @@ span.m-left{
   height: 100%;
 }
 
-.avatar img{
+.avatar img {
   width: 450px;
   border-radius:90% 1% 1%;
 }
+
+.center {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.fa-chevron-down {
+  color: #c0c0c07a;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.fa-chevron-down:hover {
+  color: red;
+  transition: .6s;
+} 
 
 .space,
 .contact{
@@ -172,7 +191,7 @@ span.m-left{
 
 .about,
 .contact {
-  height: 100vh;
+  height: 70vh;
   margin-top: 100px;
 }
 
@@ -232,7 +251,7 @@ span.m-left{
   font-size: 1rem;
   left: 50%;
   right: 50%;
-  top: -32%;
+  top: -45%;
   transform: translateX(100%);
   font-weight: bold;
 }
@@ -259,7 +278,7 @@ span.m-left{
 }
 
 .skills {
-  height: 100vh;
+  height: 70vh;
 }
 
 .skills h1 {
@@ -378,4 +397,8 @@ div[class^='bar-'] {
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 40px 20px 40px 20px;
+}
+
+.contact img {
+    opacity: .25;
 }
