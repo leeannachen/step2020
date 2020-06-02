@@ -1,4 +1,4 @@
- * {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -88,7 +88,7 @@ a {
 }
 
 .main-info-section {
-  padding-top: 10vh;
+  padding-top: 5vh;
   height: 75vh;
 }
 
@@ -98,8 +98,7 @@ a {
 
 .text h1 {
   color: black;
-  font-size: 5.5rem;
-  cursor: context-menu;
+  font-size: 5rem;
 }
 
 .text span{
@@ -119,14 +118,13 @@ span.m-left{
   margin-left: -10px;
 }
 
-.text p{
+.text p {
   letter-spacing: 3px;
   word-spacing: 10px;
-  font-size: 1.1rem;
-  /* padding-top: 1rem; */
+  font-size: .8rem;
 }
 
-.text a{
+.text a {
   padding: 12px 25px;
   background-color: none;
   border: 3px solid red;
@@ -161,7 +159,7 @@ span.m-left{
 }
 
 .avatar img {
-  width: 450px;
+  width: 425px;
   border-radius:90% 1% 1%;
 }
 
@@ -172,7 +170,7 @@ span.m-left{
 }
 
 .fa-chevron-down {
-  color: #c0c0c07a;
+  color: #c0c0c038;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -184,15 +182,26 @@ span.m-left{
   transition: .6s;
 } 
 
+#to-about,
+#to-skills,
+#to-contact {
+  margin-top: 30px; 
+}
+
 .space,
 .contact{
   height: 13vh;
 }
 
-.about,
+
+.about {
+  height: 70vh;
+  margin-top: 8vh;
+}
+
 .contact {
   height: 70vh;
-  margin-top: 100px;
+  margin-top: 15vh;
 }
 
 .about h1,
@@ -220,19 +229,19 @@ span.m-left{
 .contact-me p {
   font-size: 1.3rem;
   color: white;
-  margin: 30px;
+  margin: 10px;
 }
 
 .about-me-info p:nth-child(2),
 .about-me-info p:last-child,
 .contact-me p:nth-child(2),
 .contact-me p:last-child  {
-  margin-top:30px;
+  margin-top:30px; 
 }
 
 .about img,
 .contact img {
-  width: 350px;
+  width: 300px;
   position: relative;
   top: -200px;
   left: 50%;
@@ -242,16 +251,14 @@ span.m-left{
 }
 
 .secret-message{
-  width: 350px;
+  width: 300px;
   position: relative;
-  top: -54%;
-  border-radius: 50%;
+  top: -70%;
   text-align: center;
   color: white;
   font-size: 1rem;
   left: 50%;
   right: 50%;
-  top: -45%;
   transform: translateX(100%);
   font-weight: bold;
 }
@@ -288,7 +295,7 @@ span.m-left{
 }
 
 .skills-info {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   color: #343434;
   max-width: 800px;
   position: relative;
@@ -303,7 +310,7 @@ span.m-left{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 50px;
+  margin-bottom: 3vh;
 }
 
 div[class^='tag-'] {

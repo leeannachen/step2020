@@ -25,5 +25,11 @@ function addRandomGreeting() {
 
   // Add it to the page.
   const factContainer = document.getElementById('message-container');
-  factContainer.innerText = "You found a hidden fact! \n \n" + fact + "\n \n Reload the page, and this fact will disappear";
+  factContainer.innerText = "You found a hidden fact! \n \n" + fact;
+}
+
+async function getRandomQuoteUsingAsyncAwait() {
+  const response = await fetch('/data');
+  const quote = await response.text();
+  document.getElementById('quote-container').innerText = quote;
 }
