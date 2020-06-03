@@ -25,6 +25,7 @@ function addRandomGreeting() {
 
   // Add it to the page.
   const factContainer = document.getElementById('message-container');
+
   factContainer.innerText = "You found a hidden fact! \n \n" + fact;
 }
 

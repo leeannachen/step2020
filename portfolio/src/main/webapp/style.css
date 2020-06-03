@@ -99,7 +99,6 @@ a {
 .text h1 {
   color: black;
   font-size: 5rem;
-}
 
 .text span{
   display: inline-block;
@@ -125,6 +124,7 @@ span.m-left{
 }
 
 .text a {
+
   padding: 12px 25px;
   background-color: none;
   border: 3px solid red;
@@ -193,7 +193,6 @@ span.m-left{
   height: 13vh;
 }
 
-
 .about {
   height: 70vh;
   margin-top: 8vh;
@@ -229,6 +228,7 @@ span.m-left{
 .contact-me p {
   font-size: 1.3rem;
   color: white;
+
   margin: 10px;
 }
 
@@ -236,7 +236,7 @@ span.m-left{
 .about-me-info p:last-child,
 .contact-me p:nth-child(2),
 .contact-me p:last-child  {
-  margin-top:30px; 
+ margin-top:30px; 
 }
 
 .about img,
@@ -333,7 +333,6 @@ div[class^='tag-'] p{
   position: relative;
   width: 600px;
   height: 20px;
-  /* border: 2px solid #C0C0C0; */
   border-radius: 20px;
   background-color: #C0C0C0;
 }
@@ -404,8 +403,4 @@ div[class^='bar-'] {
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 40px 20px 40px 20px;
-}
-
-.contact img {
-    opacity: .25;
 }
