@@ -52,7 +52,7 @@ public class DataServlet extends HttpServlet {
     String quote = quotes.get((int) (Math.random() * quotes.size()));
 
     response.setContentType("text/html;");
-    response.getWriter().println("<h1>Hello Lee!</h1>");
+    response.getWriter().println("Hello Lee!");
     response.getWriter().println(quote)
   }
 }
