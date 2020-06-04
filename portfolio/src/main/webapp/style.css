@@ -10,7 +10,7 @@ html {
 }
 
 .container {
-  padding: 0 100px 0 100px;
+  padding: 0 6% 0 6%;
 }
 
 nav ul,
@@ -88,8 +88,8 @@ a {
 }
 
 .main-info-section {
-  padding-top: 10vh;
-  height: 100vh;
+  padding-top: 5vh;
+  height: 75vh;
 }
 
 .text {
@@ -98,9 +98,7 @@ a {
 
 .text h1 {
   color: black;
-  font-size: 4.5rem;
-  cursor: context-menu;
-}
+  font-size: 5rem;
 
 .text span{
   display: inline-block;
@@ -119,13 +117,14 @@ span.m-left{
   margin-left: -10px;
 }
 
-.text p{
+.text p {
   letter-spacing: 3px;
   word-spacing: 10px;
-  font-size: .9rem;
+  font-size: .8rem;
 }
 
-.text a{
+.text a {
+
   padding: 12px 25px;
   background-color: none;
   border: 3px solid red;
@@ -159,9 +158,34 @@ span.m-left{
   height: 100%;
 }
 
-.avatar img{
-  width: 450px;
+.avatar img {
+  width: 425px;
   border-radius:90% 1% 1%;
+}
+
+.center {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.fa-chevron-down {
+  color: #c0c0c038;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.fa-chevron-down:hover {
+  color: red;
+  transition: .6s;
+} 
+
+#to-about,
+#to-skills,
+#to-contact {
+  margin-top: 30px; 
 }
 
 .space,
@@ -169,10 +193,14 @@ span.m-left{
   height: 13vh;
 }
 
-.about,
+.about {
+  height: 70vh;
+  margin-top: 8vh;
+}
+
 .contact {
-  height: 100vh;
-  margin-top: 100px;
+  height: 70vh;
+  margin-top: 15vh;
 }
 
 .about h1,
@@ -200,37 +228,39 @@ span.m-left{
 .contact-me p {
   font-size: 1.3rem;
   color: white;
+
+  margin: 10px;
 }
 
 .about-me-info p:nth-child(2),
 .about-me-info p:last-child,
 .contact-me p:nth-child(2),
 .contact-me p:last-child  {
-  margin-top:30px;
+ margin-top:30px; 
 }
 
 .about img,
 .contact img {
-  width: 350px;
+  width: 300px;
   position: relative;
-  top: -250px;
-  left: calc(100% - 100px);
-  right: calc(100% - 100px);
-  transform: translateX(calc(-100% + 100px));
+  top: -200px;
+  left: 50%;
+  right: 50%;
+  transform: translateX(100%);
   border-radius: 50%;
 }
 
 .secret-message{
-  width: 350px;
+  width: 300px;
   position: relative;
-  top: -460px;
-  left: calc(100% - 100px);
-  right: calc(100% - 100px);
-  transform: translateX(calc(-100% + 100px));
-  border-radius: 50%;
+  top: -70%;
   text-align: center;
   color: white;
-  font-size: .8rem;
+  font-size: 1rem;
+  left: 50%;
+  right: 50%;
+  transform: translateX(100%);
+  font-weight: bold;
 }
 
 .centered{
@@ -255,7 +285,7 @@ span.m-left{
 }
 
 .skills {
-  height: 100vh;
+  height: 70vh;
 }
 
 .skills h1 {
@@ -265,7 +295,7 @@ span.m-left{
 }
 
 .skills-info {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   color: #343434;
   max-width: 800px;
   position: relative;
@@ -280,7 +310,7 @@ span.m-left{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 40px;
+  margin-bottom: 3vh;
 }
 
 div[class^='tag-'] {
@@ -303,9 +333,7 @@ div[class^='tag-'] p{
   position: relative;
   width: 600px;
   height: 20px;
-  border: 2px solid #C0C0C0;
   border-radius: 20px;
-  margin-top 7px;
   background-color: #C0C0C0;
 }
 
@@ -347,7 +375,6 @@ div[class^='bar-'] {
   background-color: blue;
   height: 10px;
   border-radius: 20px;
-  margin: 2.7px;
 }
 
 .bar-html,
