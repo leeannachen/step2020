@@ -409,3 +409,9 @@ div[class^='bar-'] {
 .contact img {
     opacity: .25;
 }
+
+.comments {
+    height: 100vh;
+    top: 50%;
+    bottom: 50%;
+}

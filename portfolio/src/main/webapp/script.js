@@ -28,8 +28,22 @@ function addRandomGreeting() {
   factContainer.innerText = "You found a hidden fact! \n \n" + fact;
 }
 
-async function getRandomQuoteUsingAsyncAwait() {
-  const response = await fetch('/data');
-  const quote = await response.text();
-  document.getElementById('quote-container').innerText = quote;
+// Fetches comments
+function getComments() {
+    console.log("Fetching comments")
+    const responsePromise = fetch('/data');
+    responsePromise.then(handleResponse);
+}
+
+// Handles response stream by converting it to text and passing the result to addQuoteToDom().
+function handleResponse(response) {
+  console.log('Handling the response.');
+  const textPromise = response.text();
+  textPromise.then(addCommentsToDom);
+}
+
+function addCommentsToDom(comments) {
+  console.log("Adding the following comments to DOM: " + comments);
+  const commentContainer = document.getElementById('comment-container');
+  commentContainer.innerText = comments;
 }
