@@ -8,7 +8,7 @@
     <script src="script.js"></script>
     <script src="https://kit.fontawesome.com/d691fbec03.js" crossorigin="anonymous"></script>
   </head>
-  <body>
+  <body onload="loadTasks()">>
 
     <div class="container navbar">
       <header>
@@ -132,11 +132,26 @@
         <img src="./image/red.jpg" alt="" id="reach-red-ball">
     </div>
 
-    <div class="container comments">
+    <div class="container comments" id="end">
       <h1>Comments</h1>
       <button onclick="getComments()">Click here to see comments:</button>
       <div id="comment-container"></div>
+      <div class="space"></div>
+        
+        <h1>Todo List</h1>
+
+        <form method="POST" action="/new-task">
+        <input type="text" name="title" />
+        <br/>
+        <button>Submit</button>
+        </form>
+
+        <hr/>
+
+        <ul id="task-list"></ul>
     </div>
+
+    
   </div>
   </body>
 </html>
