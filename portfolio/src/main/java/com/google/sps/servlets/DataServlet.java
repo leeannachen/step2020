@@ -41,8 +41,10 @@ public class DataServlet extends HttpServlet {
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    response.getWriter().println("Connected!");
+    // response.getWriter().println("Connected!");
     // response.getWriter().println(comments);
+    // if not comment.length then call addComment 
+    addComments();
     String json = convertToJsonUsingGson();
     response.setContentType("application/json;");
     response.getWriter().println(json);
