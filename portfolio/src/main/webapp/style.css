@@ -99,6 +99,7 @@ a {
 .text h1 {
   color: black;
   font-size: 5rem;
+}
 
 .text span{
   display: inline-block;
