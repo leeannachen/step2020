@@ -416,11 +416,11 @@ div[class^='bar-'] {
     bottom: 50%;
 }
 
-#task-list {
+#comment-list {
   list-style-type: none;
 }
 
-.task {
+.comment {
   border: thin solid black;
   display: flex;
   margin: 10px;
@@ -428,6 +428,6 @@ div[class^='bar-'] {
   width: 600px;
 }
 
-.task span {
+.comment span {
   flex-grow: 1;
 }

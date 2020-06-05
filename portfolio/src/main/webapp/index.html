@@ -8,7 +8,7 @@
     <script src="script.js"></script>
     <script src="https://kit.fontawesome.com/d691fbec03.js" crossorigin="anonymous"></script>
   </head>
-  <body onload="loadTasks()">>
+  <body onload="loadComments()">>
 
     <div class="container navbar">
       <header>
@@ -140,7 +140,7 @@
         
         <h1>Leave a comment :) </h1>
 
-        <form method="POST" action="/new-task">
+        <form method="POST" action="/new-comment">
         <input type="text" name="title"  placeholder="message"/>
         <input type="text" name="user"  placeholder="name"/>
         <br/>
@@ -149,7 +149,7 @@
 
         <hr/>
 
-        <ul id="task-list"></ul>
+        <ul id="comment-list"></ul>
     </div>
 
     

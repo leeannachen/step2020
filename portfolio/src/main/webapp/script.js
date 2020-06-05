@@ -48,7 +48,7 @@ function addCommentsToDom(comments) {
   commentContainer.innerText = comments;  
 }
 
-//take a text sectio and make it into a li element 
+//take a text section and make it into a li element 
 function createListElement(text) {
     const liElement = document.createElement('li');
     liElement.innerText = text;
@@ -56,48 +56,48 @@ function createListElement(text) {
 }
 
 // todo list 
-function loadTasks() {
-  fetch('/list-tasks').then(response => response.json()).then((tasks) => {
-    const taskListElement = document.getElementById('task-list');
-    tasks.forEach((task) => {
-      taskListElement.appendChild(createTaskElement(task));
+function loadComments() {
+  fetch('/list-comments').then(response => response.json()).then((comments) => {
+    const commentListElement = document.getElementById('comment-list');
+    comments.forEach((comment) => {
+      commentListElement.appendChild(createCommentElement(comment));
     })
   });
 }
 
-// Creates an element that represents a task, including its delete button. 
-function createTaskElement(task) {
-  const taskElement = document.createElement('li');
-  taskElement.className = 'task';
+// Creates an element that represents a comment, including its delete button. 
+function createCommentElement(comment) {
+  const commentElement = document.createElement('li');
+  commentElement.className = 'comment';
 
   const titleElement = document.createElement('span');
-  titleElement.innerText = task.title;
+  titleElement.innerText = comment.title;
 
   const userElement = document.createElement('span');
-  userElement.innerText = task.user;
+  userElement.innerText = comment.user;
 
   const timeElement = document.createElement('span');
-  timeElement.innerText = task.time;
+  timeElement.innerText = comment.time;
 
   const deleteButtonElement = document.createElement('button');
   deleteButtonElement.innerText = 'Delete';
   deleteButtonElement.addEventListener('click', () => {
-    deleteTask(task);
+    deleteComment(comment);
 
-    // Remove the task from the DOM.
-    taskElement.remove();
+    // Remove the comment from the DOM.
+    commentElement.remove();
   });
 
-  taskElement.appendChild(titleElement);
-  taskElement.appendChild(userElement);
-  taskElement.appendChild(timeElement);
-  taskElement.appendChild(deleteButtonElement);
-  return taskElement;
+  commentElement.appendChild(titleElement);
+  commentElement.appendChild(userElement);
+  commentElement.appendChild(timeElement);
+  commentElement.appendChild(deleteButtonElement);
+  return commentElement;
 }
 
-// Tells the server to delete the task. 
-function deleteTask(task) {
+// Tells the server to delete the comment. 
+function deleteComment(comment) {
   const params = new URLSearchParams();
-  params.append('id', task.id);
-  fetch('/delete-task', {method: 'POST', body: params});
+  params.append('id', comment.id);
+  fetch('/delete-comment', {method: 'POST', body: params});
 }
