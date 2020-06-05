@@ -29,6 +29,14 @@ function addRandomGreeting() {
   factContainer.innerText = "You found a hidden fact! \n \n" + fact;
 }
 
+// // get query string 
+// const queryString = window.location.search;
+// console.log(queryString)
+// const urlParams = new URLSearchParams(queryString);
+// const commentsShown = urlParams.get('comments')
+// console.log(commentsShown)
+
+
 // onload function 
 function loadComments() {
   fetch('/list-comments').then(response => response.json()).then((comments) => {

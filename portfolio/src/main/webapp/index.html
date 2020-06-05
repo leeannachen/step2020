@@ -135,13 +135,17 @@
     </div>
 
     <div class="container comments" id="end">
-        <h1>Leave a comment :) </h1>
 
+        <h1>Leave a comment :) </h1>
+        <form method="POST" action="/list-comments">
+            <input type="number" name="commentsShown" placeholder="Comment you want to see">
+            <button>Submit</button>
+        </form>
         <form method="POST" action="/new-comment">
-        <input type="text" name="title"  placeholder="message"/>
-        <input type="text" name="user"  placeholder="name"/>
-        <br/>
-        <button>Submit</button>
+            <input type="text" name="title"  placeholder="message"/>
+            <input type="text" name="user"  placeholder="name"/>
+            <br/>
+            <button>Submit</button>
         </form>
 
         <hr/>
