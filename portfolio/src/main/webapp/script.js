@@ -25,6 +25,7 @@ function addRandomGreeting() {
 
   // Add it to the page.
   const factContainer = document.getElementById('message-container');
+
   factContainer.innerText = "You found a hidden fact! \n \n" + fact;
 }
 
@@ -55,7 +56,7 @@ function createListElement(text) {
     return liElement
 }
 
-// todo list 
+// todost 
 function loadComments() {
   fetch('/list-comments').then(response => response.json()).then((comments) => {
     const commentListElement = document.getElementById('comment-list');
@@ -99,5 +100,5 @@ function createCommentElement(comment) {
 function deleteComment(comment) {
   const params = new URLSearchParams();
   params.append('id', comment.id);
-  fetch('/delete-comment', {method: 'POST', body: params});
+ fetch('/delete-comment', {method: 'POST', body: params});
 }
