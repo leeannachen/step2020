@@ -39,16 +39,16 @@ public class DataServlet extends HttpServlet {
     comments.add("Completely not ever been done before");
   }
 
-  @Override
-  public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    // response.getWriter().println("Connected!");
-    // response.getWriter().println(comments);
-    // if not comment.length then call addComment 
-    addComments();
-    String json = convertToJsonUsingGson();
-    response.setContentType("application/json;");
-    response.getWriter().println(json);
-  }
+//   @Override
+//   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+//     // response.getWriter().println("Connected!");
+//     // response.getWriter().println(comments);
+//     // if not comment.length then call addComment 
+//     addComments();
+//     String json = convertToJsonUsingGson();
+//     response.setContentType("application/json;");
+//     response.getWriter().println(json);
+//   }
 
   private String convertToJsonUsingGson() {
       Gson gson = new Gson();

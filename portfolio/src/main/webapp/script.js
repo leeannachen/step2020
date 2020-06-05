@@ -73,6 +73,12 @@ function createTaskElement(task) {
   const titleElement = document.createElement('span');
   titleElement.innerText = task.title;
 
+  const userElement = document.createElement('span');
+  userElement.innerText = task.user;
+
+  const timeElement = document.createElement('span');
+  timeElement.innerText = task.time;
+
   const deleteButtonElement = document.createElement('button');
   deleteButtonElement.innerText = 'Delete';
   deleteButtonElement.addEventListener('click', () => {
@@ -83,6 +89,8 @@ function createTaskElement(task) {
   });
 
   taskElement.appendChild(titleElement);
+  taskElement.appendChild(userElement);
+  taskElement.appendChild(timeElement);
   taskElement.appendChild(deleteButtonElement);
   return taskElement;
 }
