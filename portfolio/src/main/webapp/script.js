@@ -29,8 +29,49 @@ function addRandomGreeting() {
   factContainer.innerText = "You found a hidden fact! \n \n" + fact;
 }
 
-async function getRandomQuoteUsingAsyncAwait() {
-  const response = await fetch('/data');
-  const quote = await response.text();
-  document.getElementById('quote-container').innerText = quote;
+// onload function 
+function loadComments() {
+  fetch('/list-comments').then(response => response.json()).then((comments) => {
+    const commentListElement = document.getElementById('comment-list');
+    comments.forEach((comment) => {
+      commentListElement.appendChild(createCommentElement(comment));
+    })
+  });
+}
+
+// Creates an element that represents a comment, including its delete button. 
+function createCommentElement(comment) {
+  const commentElement = document.createElement('li');
+  commentElement.className = 'comment';
+
+  const titleElement = document.createElement('span');
+  titleElement.innerText = comment.title;
+
+  const userElement = document.createElement('span');
+  userElement.innerText = comment.user;
+
+  const timeElement = document.createElement('span');
+  timeElement.innerText = comment.time;
+
+  const deleteButtonElement = document.createElement('button');
+  deleteButtonElement.innerText = 'Delete';
+  deleteButtonElement.addEventListener('click', () => {
+    deleteComment(comment);
+
+    // Remove the comment from the DOM.
+    commentElement.remove();
+  });
+
+  commentElement.appendChild(titleElement);
+  commentElement.appendChild(userElement);
+  commentElement.appendChild(timeElement);
+  commentElement.appendChild(deleteButtonElement);
+  return commentElement;
+}
+
+// Tells the server to delete the comment. 
+function deleteComment(comment) {
+  const params = new URLSearchParams();
+  params.append('id', comment.id);
+ fetch('/delete-comment', {method: 'POST', body: params});
 }
