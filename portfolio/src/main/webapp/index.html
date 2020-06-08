@@ -137,18 +137,27 @@
     <div class="container comments" id="end">
 
         <h1>Leave a comment :) </h1>
+        
+        <div>
         <form method="POST" action="/list-comments">
-            <input type="number" name="commentsShown" placeholder="Comment you want to see">
-            <button>Submit</button>
+            <label for="commentsShown">Comments displayed:</label>
+                <select id="commentsShown" name="commentsShown" onchange="this.form.submit()">
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="25">20</option>
+                <option value="50">50</option>
         </form>
+        </div>
+
+        <div>
         <form method="POST" action="/new-comment">
             <input type="text" name="title"  placeholder="message"/>
             <input type="text" name="user"  placeholder="name"/>
             <br/>
             <button>Submit</button>
         </form>
+        </div>
 
-        <hr/>
 
         <ul id="comment-list"></ul>
     </div>

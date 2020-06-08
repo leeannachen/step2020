@@ -12,10 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-/**
- * Adds a random greeting to the page.
- */
-
 function addRandomGreeting() {
   const facts =
       ['I have a tabby cat named Poppy.', 'I was in a drumline.', 'I\'m part of Y Fashion House at Yale.', 'I love to paint.', 'I am from Nashville.'];
@@ -77,9 +73,26 @@ function createCommentElement(comment) {
   return commentElement;
 }
 
+
 // Tells the server to delete the comment. 
 function deleteComment(comment) {
   const params = new URLSearchParams();
   params.append('id', comment.id);
  fetch('/delete-comment', {method: 'POST', body: params});
+}
+
+
+// Limit comments shown 
+function newCommentsShown() {
+    const dropdown = document.getElementById("commentsShown");
+    dropdown.onchange = changeDropdownVal;
+    if (sessionStorage["commentsShown"]) {
+        dropdown.value = sessionStorage["commentsShown"];
+    }   
+}
+
+function changeCommentsShown() {
+    const commentsShown = document.getElementById("commentsShown");
+    sessionStorage["commentsShown"] = dropdown.value;
+    this.form.submit();
 }
