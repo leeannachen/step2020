@@ -43,6 +43,17 @@ import java.lang.*;
 public class ListCommentsServlet extends HttpServlet {
   
   int commentsShown = 5;
+  
+  @Override
+  public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    String commentsShownString = request.getParameter("commentsShown");
+    if (commentsShownString == null){
+        commentsShown = commentsShown;
+    } else {
+        commentsShown = Integer.parseInt(commentsShownString);
+    }
+    response.sendRedirect("/index.html");
+  }  
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -50,14 +61,6 @@ public class ListCommentsServlet extends HttpServlet {
 
     DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
     PreparedQuery results = datastore.prepare(query);
-    
-    String commentsShownString = request.getParameter("commentsShown");
-    if (commentsShownString == null){
-        commentsShown = commentsShown;
-    } else {
-        commentsShown = Integer.parseInt(commentsShownString);
-    }
-
 
     List<Comment> comments = new ArrayList<>();
     for (Entity entity : results.asIterable(FetchOptions.Builder.withLimit(commentsShown))) {
