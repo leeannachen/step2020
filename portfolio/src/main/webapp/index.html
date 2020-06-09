@@ -7,8 +7,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Muli:wght@300&display=swap" rel="stylesheet">
     <script src="script.js"></script>
     <script src="https://kit.fontawesome.com/d691fbec03.js" crossorigin="anonymous"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTkaBUiXmTof1JeMXiplYaeTZ39ms4DNU&callback=initMap"
+  type="text/javascript"></script>
   </head>
-  <body onload="loadComments()">
+  <body>
 
     <div class="container navbar">
       <header>
@@ -161,8 +163,11 @@
 
         <ul id="comment-list"></ul>
     </div>
-
     
+    <div class="container comments" id="map-section">
+     <div id="map"></div>
+    </div>
+
   </div>
   </body>
 </html>

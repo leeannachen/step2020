@@ -12,6 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+
+window.onload = function(){
+    loadComments();
+    createMap();
+}
+
 function addRandomGreeting() {
   const facts =
       ['I have a tabby cat named Poppy.', 'I was in a drumline.', 'I\'m part of Y Fashion House at Yale.', 'I love to paint.', 'I am from Nashville.'];
@@ -24,14 +30,6 @@ function addRandomGreeting() {
 
   factContainer.innerText = "You found a hidden fact! \n \n" + fact;
 }
-
-// // get query string 
-// const queryString = window.location.search;
-// console.log(queryString)
-// const urlParams = new URLSearchParams(queryString);
-// const commentsShown = urlParams.get('comments')
-// console.log(commentsShown)
-
 
 // onload function 
 function loadComments() {
@@ -95,4 +93,11 @@ function changeCommentsShown() {
     const commentsShown = document.getElementById("commentsShown");
     sessionStorage["commentsShown"] = dropdown.value;
     this.form.submit();
+}
+
+// Map map
+function createMap() {
+  const map = new google.maps.Map(
+      document.getElementById('map'),
+      {center: {lat: 37.422, lng: -122.084}, zoom: 16});
 }
