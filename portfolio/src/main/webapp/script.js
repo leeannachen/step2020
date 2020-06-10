@@ -289,14 +289,14 @@ function initMap() {
             {name: 'Styled Map'});
 
     // The location of Nashville
-    var Nashville = {lat: 36.164347196601156, lng: -86.78117037227406};
+    var nashville = {lat: 36.164347196601156, lng: -86.78117037227406};
 
     // Create a map object, and include the MapTypeId to add
     // to the map type control.
     // The map, centered at Nashville
     var map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: 36.164347196601156, lng: -80.78117037227406},
-        zoom: 4.5,
+        center: {lat: 38, lng: -88},
+        zoom: 4,
         mapTypeControlOptions: {
         mapTypeIds: ['roadmap', 'satellite', 'hybrid', 'terrain',
                 'styled_map']
@@ -309,7 +309,7 @@ function initMap() {
 
     // Create landmark
     addLandmark(
-        map, 36.164347196601156, -86.78117037227406, 'Nashville',
+        map, nashville.lat, nashville.lng, 'Nashville',
         'I grew up in Nashville, TN.')
     addLandmark(
         map, 35.0887, -92.4421, 'Conway',
