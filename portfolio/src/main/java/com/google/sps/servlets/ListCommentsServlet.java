@@ -20,8 +20,11 @@ import com.google.appengine.api.datastore.Entity;
 import com.google.appengine.api.datastore.PreparedQuery;
 import com.google.appengine.api.datastore.Query;
 import com.google.appengine.api.datastore.Query.SortDirection;
+import com.google.appengine.api.datastore.FetchOptions;
+import com.google.appengine.api.datastore.FetchOptions.Builder;
 import com.google.gson.Gson;
 import com.google.sps.data.Comment;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,10 +34,26 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Date;
 import java.text.SimpleDateFormat;  
+import java.net.*; 
+import java.lang.*;
+  
 
 /** Servlet responsible for listing comments. */
 @WebServlet("/list-comments")
 public class ListCommentsServlet extends HttpServlet {
+  
+  int commentsShown = 5;
+  
+  @Override
+  public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    String commentsShownString = request.getParameter("commentsShown");
+    if (commentsShownString == null){
+        commentsShown = commentsShown;
+    } else {
+        commentsShown = Integer.parseInt(commentsShownString);
+    }
+    response.sendRedirect("/index.html");
+  }  
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -44,12 +63,13 @@ public class ListCommentsServlet extends HttpServlet {
     PreparedQuery results = datastore.prepare(query);
 
     List<Comment> comments = new ArrayList<>();
-    for (Entity entity : results.asIterable()) {
+    for (Entity entity : results.asIterable(FetchOptions.Builder.withLimit(commentsShown))) {
       long id = entity.getKey().getId();
       String title = (String) entity.getProperty("title");
       String user = (String) entity.getProperty("user");
       long timestamp = (long) entity.getProperty("timestamp");
-    //changing date formate   
+
+    //change to readable date formate   
       long yourmilliseconds = timestamp;
       SimpleDateFormat sdf = new SimpleDateFormat("MMM dd,yyyy HH:mm");    
       Date resultdate = new Date(yourmilliseconds);
