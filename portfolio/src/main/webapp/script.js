@@ -15,6 +15,7 @@
 
 window.onload = function(){
     loadComments();
+    getDropdownVal();
     initMap();
 }
 
@@ -79,19 +80,19 @@ function deleteComment(comment) {
  fetch('/delete-comment', {method: 'POST', body: params});
 }
 
+// 6/10 trying to match the display value with selection 
 
-// Limit comments shown 
-function newCommentsShown() {
+function getDropdownVal() {
     const dropdown = document.getElementById("commentsShown");
     dropdown.onchange = changeDropdownVal;
-    if (sessionStorage["commentsShown"]) {
-        dropdown.value = sessionStorage["commentsShown"];
+    if (localStorage["commentsShown"]) {
+        dropdown.value = localStorage["commentsShown"];
     }   
 }
 
-function changeCommentsShown() {
-    const commentsShown = document.getElementById("commentsShown");
-    sessionStorage["commentsShown"] = dropdown.value;
+function changeDropdownVal() {
+    const dropdown = document.getElementById("commentsShown");
+    localStorage["commentsShown"] = dropdown.value;
     this.form.submit();
 }
 
