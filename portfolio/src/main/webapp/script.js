@@ -15,6 +15,7 @@
 
 window.onload = function(){
     loadComments();
+    getDropdownVal();
     initMap();
 }
 
@@ -79,21 +80,21 @@ function deleteComment(comment) {
  fetch('/delete-comment', {method: 'POST', body: params});
 }
 
-
-// Limit comments shown 
-function newCommentsShown() {
+// 6/10 trying to match the display value with selection 
+function getDropdownVal() {
     const dropdown = document.getElementById("commentsShown");
     dropdown.onchange = changeDropdownVal;
-    if (sessionStorage["commentsShown"]) {
-        dropdown.value = sessionStorage["commentsShown"];
+    if (localStorage["commentsShown"]) {
+        dropdown.value = localStorage["commentsShown"];
     }   
 }
 
-function changeCommentsShown() {
-    const commentsShown = document.getElementById("commentsShown");
-    sessionStorage["commentsShown"] = dropdown.value;
+function changeDropdownVal() {
+    const dropdown = document.getElementById("commentsShown");
+    localStorage["commentsShown"] = dropdown.value;
     this.form.submit();
 }
+
 
 // Create greyscale map with a marker 
 function initMap() {
@@ -293,7 +294,6 @@ function initMap() {
 
     // Create a map object, and include the MapTypeId to add
     // to the map type control.
-    // The map, centered at Nashville
     var map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: 38, lng: -88},
         zoom: 4,
