@@ -15,6 +15,7 @@
 
 window.onload = function(){
     loadComments();
+    getDropdownVal();
     initMap();
 }
 
@@ -79,26 +80,27 @@ function deleteComment(comment) {
  fetch('/delete-comment', {method: 'POST', body: params});
 }
 
+// 6/10 trying to match the display value with selection 
 
-// Limit comments shown 
-function newCommentsShown() {
+function getDropdownVal() {
     const dropdown = document.getElementById("commentsShown");
     dropdown.onchange = changeDropdownVal;
-    if (sessionStorage["commentsShown"]) {
-        dropdown.value = sessionStorage["commentsShown"];
+    if (localStorage["commentsShown"]) {
+        dropdown.value = localStorage["commentsShown"];
     }   
 }
 
-function changeCommentsShown() {
-    const commentsShown = document.getElementById("commentsShown");
-    sessionStorage["commentsShown"] = dropdown.value;
+function changeDropdownVal() {
+    const dropdown = document.getElementById("commentsShown");
+    localStorage["commentsShown"] = dropdown.value;
     this.form.submit();
 }
 
+// Create greyscale map with a marker 
 function initMap() {
-// Create a new StyledMapType object, passing it an array of styles,
-// and the name to be displayed on the map type control.
-var styledMapType = new google.maps.StyledMapType(
+    // Create a new StyledMapType object, passing it an array of styles,
+    // and the name to be displayed on the map type control.
+    var styledMapType = new google.maps.StyledMapType(
     [{
         "elementType": "geometry",
         "stylers": [
@@ -287,18 +289,51 @@ var styledMapType = new google.maps.StyledMapType(
     ],
             {name: 'Styled Map'});
 
+    // The location of Nashville
+    var nashville = {lat: 36.164347196601156, lng: -86.78117037227406};
+
     // Create a map object, and include the MapTypeId to add
     // to the map type control.
+    // The map, centered at Nashville
     var map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: 36.164347196601156, lng: -86.78117037227406},
-        zoom: 14,
+        center: {lat: 38, lng: -88},
+        zoom: 4,
         mapTypeControlOptions: {
         mapTypeIds: ['roadmap', 'satellite', 'hybrid', 'terrain',
                 'styled_map']
         }
     });
 
-    //Associate the styled map with the MapTypeId and set it to display.
+    // Associate the styled map with the MapTypeId and set it to display.
     map.mapTypes.set('styled_map', styledMapType);
     map.setMapTypeId('styled_map');
+
+    // Create landmark
+    addLandmark(
+        map, nashville.lat, nashville.lng, 'Nashville',
+        'I grew up in Nashville, TN.')
+    addLandmark(
+        map, 35.0887, -92.4421, 'Conway',
+        'I was born in Conway, AR.')
+    addLandmark(
+        map, 41.3163, -72.9223, 'Yale',
+        'I attend Yale University.')
+    addLandmark(
+        map, 40.0189, -105.2741, 'Google Boulder',
+        'I am a STEP intern at the Google Boulder office.')   
+    addLandmark(
+        map, 42.373611, -71.110558, 'Google Cambridge',
+        'I attended Google CSSI at the Cambridge office in 2019.') 
+
+}
+
+// Adds marker that dows an info winderow when clicked 
+function addLandmark(map, lat, lng, title, description) {
+    const marker = new google.maps.Marker(
+    {position: {lat: lat, lng: lng}, map: map, title: title});
+
+    const infoWindow = new google.maps.InfoWindow({content: description});
+    marker.addListener('click', () => {
+        infoWindow.open(map, marker);
+    });
 }
