@@ -16,7 +16,7 @@
 window.onload = function(){
     loadComments();
     getDropdownVal();
-    // initMap();
+    initMap();
 }
 
 function addRandomGreeting() {
