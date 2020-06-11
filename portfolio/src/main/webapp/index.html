@@ -39,7 +39,7 @@
           <span class="m-left">l</span>
           <span class="m-left">o</span>
           <span class="m-left">,</span>
-          <br>
+          <br/>
           <span>I</span>
           <span class="m-left">'</span>
           <span class="m-left">m</span>
@@ -48,7 +48,7 @@
           <span class="m-left name">e</span>
           <span class="m-left name">e</span>
         </h1>
-        <p>Summer of 2020: virtually interning at Google<br> Part of Student Training in Engineering Program</p>
+        <p>Summer of 2020: virtually interning at Google<br/> Part of Student Training in Engineering Program</p>
         <a href="#about" onclick="addRandomGreeting()">begin</a>
       </div>
       <div class="avatar">
@@ -136,15 +136,31 @@
       </div>
         <img src="./image/red.jpg" alt="" id="reach-red-ball">
     </div>
+ 
+    <div class="container comments" id="map-section">
+        <h1>Map</h1>
+        <div id="map"></div>
+    </div>
 
     <div class="container comments" id="end">
 
         <h1>Leave a comment :) </h1>
         
         <div>
+        <form method="POST" action="/new-comment">          
+            <input type="text" name="user"  placeholder="name"/>
+            <input type="text" name="title"  placeholder="message"/>
+            <br/>
+            <button>Submit</button>
+        </form>
+        </div>
+
+        <ul id="comment-list"></ul>
+
+        <div>
         <form method="POST" action="/list-comments">
             <label for="commentsShown">Comments displayed:</label>
-                <select id="commentsShown" name="commentsShown" onchange="this.form.submit()">
+                <select id="commentsShown" name="commentsShown" onchange="this.form.submit()"/>
                 <option value="5">5</option>
                 <option value="10">10</option>
                 <option value="25">20</option>
@@ -152,27 +168,13 @@
         </form>
         </div>
 
-        <div>
-        <form method="POST" action="/new-comment">
-            <input type="text" name="title"  placeholder="message"/>
-            <input type="text" name="user"  placeholder="name"/>
-            <br/>
-            <button>Submit</button>
-        </form>
-        </div>
-
-
-        <ul id="comment-list"></ul>
     </div>
     
-    <div class="container comments" id="map-section">
-        <h1>Map</h1>
-        <div id="map"></div>
-    </div>
- 
+
     <!-- key=AIzaSyDTkaBUiXmTof1JeMXiplYaeTZ39ms4DNU -->
+
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTkaBUiXmTof1JeMXiplYaeTZ39ms4DNU&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTkaBUiXmTof1JeMXiplYaeTZ39ms4DNU&callback=initMap"> 
     </script>
   </body>
 </html>

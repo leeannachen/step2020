@@ -16,7 +16,7 @@
 window.onload = function(){
     loadComments();
     getDropdownVal();
-    initMap();
+    // initMap();
 }
 
 function addRandomGreeting() {
@@ -100,6 +100,7 @@ function changeDropdownVal() {
 function initMap() {
     // Create a new StyledMapType object, passing it an array of styles,
     // and the name to be displayed on the map type control.
+    console.log("working?")
     var styledMapType = new google.maps.StyledMapType(
     [{
         "elementType": "geometry",
@@ -292,9 +293,13 @@ function initMap() {
     // The location of Nashville
     var nashville = {lat: 36.164347196601156, lng: -86.78117037227406};
 
+    // 6/11 bug
+    const map_div=document.getElementById('map');
+    console.log(map_div);
+
     // Create a map object, and include the MapTypeId to add
     // to the map type control.
-    var map = new google.maps.Map(document.getElementById('map'), {
+    var map = new google.maps.Map(map_div, {
         center: {lat: 38, lng: -88},
         zoom: 4,
         mapTypeControlOptions: {
