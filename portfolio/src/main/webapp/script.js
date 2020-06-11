@@ -17,6 +17,7 @@ window.onload = function(){
     loadComments();
     getDropdownVal();
     initMap();
+    console.log("I see you are looking at the console")
 }
 
 function addRandomGreeting() {
@@ -100,7 +101,6 @@ function changeDropdownVal() {
 function initMap() {
     // Create a new StyledMapType object, passing it an array of styles,
     // and the name to be displayed on the map type control.
-    console.log("working?")
     var styledMapType = new google.maps.StyledMapType(
     [{
         "elementType": "geometry",
@@ -295,7 +295,6 @@ function initMap() {
 
     // 6/11 bug
     const map_div=document.getElementById('map');
-    console.log(map_div);
 
     // Create a map object, and include the MapTypeId to add
     // to the map type control.

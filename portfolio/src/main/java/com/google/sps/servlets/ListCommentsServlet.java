@@ -42,7 +42,7 @@ import java.lang.*;
 @WebServlet("/list-comments")
 public class ListCommentsServlet extends HttpServlet {
   
-  int commentsShown = 5;
+  int commentsShown = 10;
   
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
