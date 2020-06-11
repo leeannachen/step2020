@@ -294,7 +294,6 @@ function initMap() {
 
     // Create a map object, and include the MapTypeId to add
     // to the map type control.
-    // The map, centered at Nashville
     var map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: 38, lng: -88},
         zoom: 4,

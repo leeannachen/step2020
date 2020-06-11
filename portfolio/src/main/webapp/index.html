@@ -144,7 +144,7 @@
         <div>
         <form method="POST" action="/new-comment">
             <label for= "user">Name</label> <br>
-            <input type="text" name="user"  placeholder="name" id="user"/>
+            <input type="text" name="user"  placeholder="name" id="user" required/>
             <br>
             <label for= "message-box">Message</label> <br>
             <input type="text" name="title"  placeholder="message" id="message-box" required/>
@@ -153,6 +153,7 @@
         </form>
         </div>
 
+        <div>
         <ul id="comment-list"></ul>
         <form method="POST" action="/list-comments">
             <label for="commentsShown">Comments displayed:</label><br>
@@ -162,10 +163,12 @@
                 <option value="25">20</option>
                 <option value="50">50</option>
         </form>
+        </div>
     </div>
     
     <div class="container" id="map-section">
-        <h1>Map</h1>
+        <h1>Map</h1> <br>
+        <p>Mapping out my story</p>
         <div id="map"></div>
     </div>
  
