@@ -39,7 +39,7 @@
           <span class="m-left">l</span>
           <span class="m-left">o</span>
           <span class="m-left">,</span>
-          <br>
+          <br/>
           <span>I</span>
           <span class="m-left">'</span>
           <span class="m-left">m</span>
@@ -48,7 +48,7 @@
           <span class="m-left name">e</span>
           <span class="m-left name">e</span>
         </h1>
-        <p>Summer of 2020: virtually interning at Google<br> Part of Student Training in Engineering Program</p>
+        <p>Summer of 2020: virtually interning at Google<br/> Part of Student Training in Engineering Program</p>
         <a href="#about" onclick="addRandomGreeting()">begin</a>
       </div>
       <div class="avatar">
@@ -136,6 +136,11 @@
       </div>
         <img src="./image/red.jpg" alt="" id="reach-red-ball">
     </div>
+ 
+    <div class="container comments" id="map-section">
+        <h1>Map</h1>
+        <div id="map"></div>
+    </div>
 
     <div class="container comments" id="comments-section">
 
@@ -144,26 +149,27 @@
         <div>
         <form method="POST" action="/new-comment">
             <label for= "user">Name</label> <br>
-            <input type="text" name="user"  placeholder="name" id="user" required/>
-            <br>
-            <label for= "message-box">Message</label> <br>
+            <input type="text" name="user"  placeholder="name" id="user"/>
+            <br/>
+            <label for= "message-box">Message</label> <br/>
             <input type="text" name="title"  placeholder="message" id="message-box" required/>
-            <br>
+            <br/>
             <button>Submit</button>
         </form>
         </div>
 
         <div>
         <ul id="comment-list"></ul>
+
         <form method="POST" action="/list-comments">
             <label for="commentsShown">Comments displayed:</label><br>
                 <select id="commentsShown" name="commentsShown" onchange="this.form.submit()">
+
                 <option value="5">5</option>
                 <option value="10">10</option>
                 <option value="25">20</option>
                 <option value="50">50</option>
         </form>
-        </div>
     </div>
     
     <div class="container" id="map-section">
@@ -175,6 +181,7 @@
     <!-- key=AIzaSyDTkaBUiXmTof1JeMXiplYaeTZ39ms4DNU -->
     <script async defer 
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTkaBUiXmTof1JeMXiplYaeTZ39ms4DNU&callback=initMap">
+
     </script>
   </body>
 </html>

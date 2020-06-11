@@ -17,6 +17,7 @@ window.onload = function(){
     loadComments();
     getDropdownVal();
     initMap();
+    console.log("I see you are looking at the console")
 }
 
 function addRandomGreeting() {
@@ -81,7 +82,6 @@ function deleteComment(comment) {
 }
 
 // 6/10 trying to match the display value with selection 
-
 function getDropdownVal() {
     const dropdown = document.getElementById("commentsShown");
     dropdown.onchange = changeDropdownVal;
@@ -95,6 +95,7 @@ function changeDropdownVal() {
     localStorage["commentsShown"] = dropdown.value;
     this.form.submit();
 }
+
 
 // Create greyscale map with a marker 
 function initMap() {
@@ -292,9 +293,12 @@ function initMap() {
     // The location of Nashville
     var nashville = {lat: 36.164347196601156, lng: -86.78117037227406};
 
+    // 6/11 bug
+    const map_div=document.getElementById('map');
+
     // Create a map object, and include the MapTypeId to add
     // to the map type control.
-    var map = new google.maps.Map(document.getElementById('map'), {
+    var map = new google.maps.Map(map_div, {
         center: {lat: 38, lng: -88},
         zoom: 4,
         mapTypeControlOptions: {
