@@ -5,11 +5,22 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <title>Lee's Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Muli:wght@300&display=swap" rel="stylesheet">
     <script src="script.js"></script>
+    <!-- font style -->
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Muli:wght@300&display=swap" rel="stylesheet">
+    <!-- contact icons  -->
     <script src="https://kit.fontawesome.com/d691fbec03.js" crossorigin="anonymous"></script>
-    <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTkaBUiXmTof1JeMXiplYaeTZ39ms4DNU&callback=initMap" -->
-  type="text/javascript"></script>
+    <!-- bootstrap -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- Google Platform for sign in   -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <!-- Meta for Google Client ID -->
+    <meta name="google-signin-client_id" content="212552288471-sc76ngldi2jo6u3qva3hogvdt5i49cgr.apps.googleusercontent.com">
+
   </head>
   <body>
 
@@ -139,7 +150,14 @@
  
     <div class="container comments" id="map-section">
         <h1>Map</h1>
+        <p>mapping out my story</p>
         <div id="map"></div>
+    </div>
+
+    <div class="container comments" id="login-section">
+    <div class="space" id="contact"></div>
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        <a href="#" onclick="signOut();">Sign out</a>
     </div>
 
     <div class="container comments" id="comments-section">
@@ -172,12 +190,6 @@
         </form>
     </div>
     
-    <div class="container" id="map-section">
-        <h1>Map</h1> <br>
-        <p>Mapping out my story</p>
-        <div id="map"></div>
-    </div>
- 
     <!-- key=AIzaSyDTkaBUiXmTof1JeMXiplYaeTZ39ms4DNU -->
     <script async defer 
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTkaBUiXmTof1JeMXiplYaeTZ39ms4DNU&callback=initMap">

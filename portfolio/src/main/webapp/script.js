@@ -43,6 +43,24 @@ function loadComments() {
   });
 }
 
+// 6/15 Google Sign in and out
+function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Warning from guide: Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail()); 
+}
+// 6/15 works 
+// @self comeback later to implement this in the comment form
+
+function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+        console.log('User signed out.');
+    });
+}
+
 // Creates an element that represents a comment, including its delete button. 
 function createCommentElement(comment) {
   const commentElement = document.createElement('li');
