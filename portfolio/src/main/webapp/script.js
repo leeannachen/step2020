@@ -51,7 +51,8 @@ function onSignIn(googleUser) {
   console.log('Image URL: ' + profile.getImageUrl());
   console.log('Email: ' + profile.getEmail()); 
 }
-// works 6/15 
+// 6/15 works 
+// @self comeback later to implement this in the comment form
 
 function signOut() {
     var auth2 = gapi.auth2.getAuthInstance();
