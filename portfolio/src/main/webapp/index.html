@@ -5,11 +5,22 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <title>Lee's Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Muli:wght@300&display=swap" rel="stylesheet">
     <script src="script.js"></script>
+    <!-- font style -->
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Muli:wght@300&display=swap" rel="stylesheet">
+    <!-- contact icons  -->
     <script src="https://kit.fontawesome.com/d691fbec03.js" crossorigin="anonymous"></script>
-    <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTkaBUiXmTof1JeMXiplYaeTZ39ms4DNU&callback=initMap" -->
-  type="text/javascript"></script>
+    <!-- bootstrap -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- Google Platform for sign in   -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <!-- Meta for Google Client ID -->
+    <meta name="google-signin-client_id" content="212552288471-sc76ngldi2jo6u3qva3hogvdt5i49cgr.apps.googleusercontent.com">
+
   </head>
   <body>
 
@@ -39,7 +50,7 @@
           <span class="m-left">l</span>
           <span class="m-left">o</span>
           <span class="m-left">,</span>
-          <br>
+          <br/>
           <span>I</span>
           <span class="m-left">'</span>
           <span class="m-left">m</span>
@@ -48,7 +59,7 @@
           <span class="m-left name">e</span>
           <span class="m-left name">e</span>
         </h1>
-        <p>Summer of 2020: virtually interning at Google<br> Part of Student Training in Engineering Program</p>
+        <p>Summer of 2020: virtually interning at Google<br/> Part of Student Training in Engineering Program</p>
         <a href="#about" onclick="addRandomGreeting()">begin</a>
       </div>
       <div class="avatar">
@@ -136,6 +147,18 @@
       </div>
         <img src="./image/red.jpg" alt="" id="reach-red-ball">
     </div>
+ 
+    <div class="container comments" id="map-section">
+        <h1>Map</h1>
+        <p>mapping out my story</p>
+        <div id="map"></div>
+    </div>
+
+    <div class="container comments" id="login-section">
+    <div class="space" id="contact"></div>
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        <a href="#" onclick="signOut();">Sign out</a>
+    </div>
 
     <div class="container comments" id="comments-section">
 
@@ -145,18 +168,21 @@
         <form method="POST" action="/new-comment">
             <label for= "user">Name</label> <br>
             <input type="text" name="user"  placeholder="name" id="user"/>
-            <br>
-            <label for= "message-box">Message</label> <br>
+            <br/>
+            <label for= "message-box">Message</label> <br/>
             <input type="text" name="title"  placeholder="message" id="message-box" required/>
-            <br>
+            <br/>
             <button>Submit</button>
         </form>
         </div>
 
+        <div>
         <ul id="comment-list"></ul>
+
         <form method="POST" action="/list-comments">
             <label for="commentsShown">Comments displayed:</label><br>
                 <select id="commentsShown" name="commentsShown" onchange="this.form.submit()">
+
                 <option value="5">5</option>
                 <option value="10">10</option>
                 <option value="25">20</option>
@@ -164,14 +190,10 @@
         </form>
     </div>
     
-    <div class="container" id="map-section">
-        <h1>Map</h1>
-        <div id="map"></div>
-    </div>
- 
     <!-- key=AIzaSyDTkaBUiXmTof1JeMXiplYaeTZ39ms4DNU -->
     <script async defer 
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTkaBUiXmTof1JeMXiplYaeTZ39ms4DNU&callback=initMap">
+
     </script>
   </body>
 </html>

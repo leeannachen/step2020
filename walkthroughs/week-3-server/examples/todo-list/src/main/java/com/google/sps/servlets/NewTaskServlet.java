@@ -32,11 +32,15 @@ public class NewTaskServlet extends HttpServlet {
     String title = request.getParameter("title");
     long timestamp = System.currentTimeMillis();
 
+    // an Entity with a kind of 'Task' is stored as the taskEntity variable 
     Entity taskEntity = new Entity("Task");
+    // adds property to the taslEntity entity
     taskEntity.setProperty("title", title);
     taskEntity.setProperty("timestamp", timestamp);
 
+    // create the instance of the DatastoreService class by creating the variable datastore with the function  
     DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+    // now store taskEntity into the datastore we just made
     datastore.put(taskEntity);
 
     response.sendRedirect("/index.html");

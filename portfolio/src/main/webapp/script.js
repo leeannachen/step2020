@@ -17,6 +17,7 @@ window.onload = function(){
     loadComments();
     getDropdownVal();
     initMap();
+    console.log("I see you are looking at the console")
 }
 
 function addRandomGreeting() {
@@ -40,6 +41,24 @@ function loadComments() {
       commentListElement.appendChild(createCommentElement(comment));
     })
   });
+}
+
+// 6/15 Google Sign in and out
+function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Warning from guide: Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail()); 
+}
+// 6/15 works 
+// @self comeback later to implement this in the comment form
+
+function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+        console.log('User signed out.');
+    });
 }
 
 // Creates an element that represents a comment, including its delete button. 
@@ -81,7 +100,6 @@ function deleteComment(comment) {
 }
 
 // 6/10 trying to match the display value with selection 
-
 function getDropdownVal() {
     const dropdown = document.getElementById("commentsShown");
     dropdown.onchange = changeDropdownVal;
@@ -95,6 +113,7 @@ function changeDropdownVal() {
     localStorage["commentsShown"] = dropdown.value;
     this.form.submit();
 }
+
 
 // Create greyscale map with a marker 
 function initMap() {
@@ -292,10 +311,12 @@ function initMap() {
     // The location of Nashville
     var nashville = {lat: 36.164347196601156, lng: -86.78117037227406};
 
+    // 6/11 bug
+    const map_div=document.getElementById('map');
+
     // Create a map object, and include the MapTypeId to add
     // to the map type control.
-    // The map, centered at Nashville
-    var map = new google.maps.Map(document.getElementById('map'), {
+    var map = new google.maps.Map(map_div, {
         center: {lat: 38, lng: -88},
         zoom: 4,
         mapTypeControlOptions: {
