@@ -268,7 +268,6 @@ public final class FindMeetingQueryTest {
     // Events  : |--A-----| |-----A----|
     // Day     : |---------------------|
     // Options :
-
     Collection<Event> events = Arrays.asList(
         new Event("Event 1", TimeRange.fromStartEnd(TimeRange.START_OF_DAY, TIME_0830AM, false),
             Arrays.asList(PERSON_A)),
@@ -283,9 +282,16 @@ public final class FindMeetingQueryTest {
     Assert.assertEquals(expected, actual);
   }
 
-  // 6/18 Test for showing time slots for an event with two optional attendees wtih sparse available slots 
+
+
+ 
   @Test
   public void timeAvailableWithOptionalAttendeesOnly() {
+    // Test for showing time slots for an event with two optional attendees wtih sparse available slots 
+    // Events  :       |----A----|
+    //                                 |--B--|
+    // Day     : |---------------------------|
+    // Options : |--1--|         |--2--|       
     Collection<Event> events = Arrays.asList(
         new Event("Event 1", TimeRange.fromStartDuration(TIME_0800AM, DURATION_60_MINUTES),
             Arrays.asList(PERSON_A)),
@@ -308,9 +314,13 @@ public final class FindMeetingQueryTest {
     
   }
 
-  // 6/19 Test for showing time slots for an event with two optional attendees wuth no shared avaible slots
   @Test
   public void noTimeAvailableWithOptionalAttendeesOnly() {
+    // Test for showing time slots for an event with two optional attendees wuth no shared avaible slots
+    // Events  :       |----A----|
+    //           |------------B--------------|                   
+    // Day     : |---------------------------|
+    // Options : 
     Collection<Event> events = Arrays.asList(
         new Event("Event 1", TimeRange.fromStartDuration(TIME_0800AM, DURATION_60_MINUTES),
             Arrays.asList(PERSON_A)),
