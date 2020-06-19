@@ -20,18 +20,18 @@ window.onload = function(){
     console.log("I see you are looking at the console")
 }
 
-function addRandomGreeting() {
-  const facts =
-      ['I have a tabby cat named Poppy.', 'I was in a drumline.', 'I\'m part of Y Fashion House at Yale.', 'I love to paint.', 'I am from Nashville.'];
+// function addRandomGreeting() {
+//   const facts =
+//       ['I have a tabby cat named Poppy.', 'I was in a drumline.', 'I\'m part of Y Fashion House at Yale.', 'I love to paint.', 'I am from Nashville.'];
 
-  // Pick a random greeting.
-  const fact = facts[Math.floor(Math.random() * facts.length)];
+//   // Pick a random greeting.
+//   const fact = facts[Math.floor(Math.random() * facts.length)];
 
-  // Add it to the page.
-  const factContainer = document.getElementById('message-container');
+//   // Add it to the page.
+//   const factContainer = document.getElementById('message-container');
 
-  factContainer.innerText = "You found a hidden fact! \n \n" + fact;
-}
+//   factContainer.innerText = "You found a hidden fact! \n \n" + fact;
+// }
 
 // onload function 
 function loadComments() {
