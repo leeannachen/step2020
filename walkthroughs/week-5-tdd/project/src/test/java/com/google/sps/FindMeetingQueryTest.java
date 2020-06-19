@@ -316,7 +316,7 @@ public final class FindMeetingQueryTest {
 
   @Test
   public void noTimeAvailableWithOptionalAttendeesOnly() {
-    // Test for showing time slots for an event with two optional attendees wuth no shared avaible slots
+    // Test for showing time slots for an event with two optional attendees with no shared avaible slots
     // Events  :       |----A----|
     //           |------------B--------------|                   
     // Day     : |---------------------------|
