@@ -43,6 +43,7 @@ public final class FindMeetingQueryTest {
   private static final int TIME_0900AM = TimeRange.getTimeInMinutes(9, 0);
   private static final int TIME_0930AM = TimeRange.getTimeInMinutes(9, 30);
   private static final int TIME_1000AM = TimeRange.getTimeInMinutes(10, 0);
+  private static final int TIME_1030AM = TimeRange.getTimeInMinutes(10, 30);
   private static final int TIME_1100AM = TimeRange.getTimeInMinutes(11, 00);
 
   private static final int DURATION_15_MINUTES = 15;
@@ -282,22 +283,51 @@ public final class FindMeetingQueryTest {
     Assert.assertEquals(expected, actual);
   }
 
-//   6/18 Work in Progress
-//   @Test
-//   public void timeAvailableWithOptionalAttendeesOnly() {
-//     Collection<Event> events = Arrays.asList(
-//         new Event("Event 1", TimeRange.fromStartEnd(TimeRange.START_OF_DAY, TIME_0830AM, false),
-//             Arrays.asList(PERSON_A)),
-//         new Event("Event 2", TimeRange.fromStartEnd(TIME_0900AM, TimeRange.END_OF_DAY, true),
-//             Arrays.asList(PERSON_A)));
+  // 6/18 Test for showing time slots for an event with two optional attendees wtih sparse available slots 
+  @Test
+  public void timeAvailableWithOptionalAttendeesOnly() {
+    Collection<Event> events = Arrays.asList(
+        new Event("Event 1", TimeRange.fromStartDuration(TIME_0800AM, DURATION_60_MINUTES),
+            Arrays.asList(PERSON_A)),
+        new Event("Event 2", TimeRange.fromStartDuration(TIME_1000AM, DURATION_30_MINUTES),
+            Arrays.asList(PERSON_A)),
+        new Event("Event 3", TimeRange.fromStartDuration(TIME_0830AM, DURATION_60_MINUTES),
+            Arrays.asList(PERSON_B)));    
 
-//     MeetingRequest request = new MeetingRequest(Arrays.asList(PERSON_A), DURATION_60_MINUTES);
+    MeetingRequest request = new MeetingRequest(NO_ATTENDEES, DURATION_15_MINUTES);
+    request.addOptionalAttendee(PERSON_A);
+    request.addOptionalAttendee(PERSON_B);
 
-//     Collection<TimeRange> actual = query.query(events, request);
-//     Collection<TimeRange> expected = Arrays.asList();
+    Collection<TimeRange> actual = query.query(events, request);
+     Collection<TimeRange> expected =
+        Arrays.asList(TimeRange.fromStartEnd(TimeRange.START_OF_DAY, TIME_0800AM, false),
+            TimeRange.fromStartEnd(TIME_0930AM, TIME_1000AM, false),
+            TimeRange.fromStartEnd(TIME_1030AM, TimeRange.END_OF_DAY, true));
 
-//     Assert.assertEquals(expected, actual);
+    Assert.assertEquals(expected, actual);
     
-//   }
+  }
+
+  // 6/19 Test for showing time slots for an event with two optional attendees wuth no shared avaible slots
+  @Test
+  public void noTimeAvailableWithOptionalAttendeesOnly() {
+    Collection<Event> events = Arrays.asList(
+        new Event("Event 1", TimeRange.fromStartDuration(TIME_0800AM, DURATION_60_MINUTES),
+            Arrays.asList(PERSON_A)),
+        new Event("Event 2", TimeRange.fromStartDuration(TIME_1000AM, DURATION_60_MINUTES),
+            Arrays.asList(PERSON_A)),
+        new Event("Event 3", TimeRange.WHOLE_DAY,
+            Arrays.asList(PERSON_B)));    
+
+    MeetingRequest request = new MeetingRequest(NO_ATTENDEES, DURATION_1_HOUR);
+    request.addOptionalAttendee(PERSON_A);
+    request.addOptionalAttendee(PERSON_B);
+
+    Collection<TimeRange> actual = query.query(events, request);
+     Collection<TimeRange> expected = Arrays.asList();
+
+    Assert.assertEquals(expected, actual);
+    
+  }
 }
 

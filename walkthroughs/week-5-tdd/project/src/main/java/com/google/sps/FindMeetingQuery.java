@@ -21,8 +21,8 @@ public final class FindMeetingQuery {
 
     public Collection<TimeRange> query(Collection<Event> events, MeetingRequest request) {
 
-        Collection<TimeRange> optional_attendees = new ArrayList<>();
-        Collection<TimeRange> mandatory_attendees = new ArrayList<>();
+        Collection<TimeRange> optional_attendees = new ArrayList<TimeRange>();
+        Collection<TimeRange> mandatory_attendees = new ArrayList<TimeRange>();
         optional_attendees.add(TimeRange.WHOLE_DAY);
         mandatory_attendees.add(TimeRange.WHOLE_DAY);
 
@@ -31,7 +31,7 @@ public final class FindMeetingQuery {
             return new ArrayList<TimeRange>();
         
 
-        Collection<String> allAttendees = new ArrayList<>();
+        Collection<String> allAttendees = new ArrayList<String>();
         allAttendees.addAll(request.getAttendees());
         allAttendees.addAll(request.getOptionalAttendees());
         for (Event event : events) {
@@ -45,6 +45,10 @@ public final class FindMeetingQuery {
             }
         }
 
+        /** empty optional attendees returns a whole day as available 
+        * if there are only optional attendees, it will return the times available; 
+        * this should solve the case: if there are no attendees, return whole day as available
+        **/ 
         if (request.getAttendees().isEmpty() || !optional_attendees.isEmpty())
             return optional_attendees;
         else {
@@ -69,13 +73,13 @@ public final class FindMeetingQuery {
         for (TimeRange time : availabilities) {
             if (time.overlaps(eventTime)) {
                 // before 
-                if (time.start() < eventTime.start() && eventTime.start() - time.start() >= requestDuration) 
+                if (time.start() < (eventTime.start()) && (eventTime.start() - time.start()) >= requestDuration) 
                 {
                     int duration = eventTime.start() - time.start();
                     availableSlots.add(TimeRange.fromStartDuration(time.start(), duration));
                 }
                 // after
-                if (eventTime.end() < time.end() && time.end() - eventTime.end() >= requestDuration) 
+                if (eventTime.end() < (time.end()) && (time.end() - eventTime.end()) >= requestDuration) 
                 {
                     int duration = time.end() - eventTime.end();
                     availableSlots.add(TimeRange.fromStartDuration(eventTime.end(), duration));
