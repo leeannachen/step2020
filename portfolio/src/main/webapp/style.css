@@ -9,26 +9,22 @@ html {
   scroll-behavior: smooth;
 }
 
-.container {
-  padding: 0 6% 0 6%;
-}
-
-nav ul,
+/* nav ul,
 .main-info-section,
 .work-category {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-}
+} */
 
-header {
+/* header {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 20px 0;
-}
+} */
 
-.navbar{
+/* .navbar{
    background-color: #343434;
    position: fixed;
    top: 0;
@@ -66,9 +62,9 @@ header {
   background-color: white;
   color: black;
   transition: all .5s;
-}
+} */
 
-header h1, header a,
+/* header h1, header a,
  .text p,
  .about h1,
  .skills h1,
@@ -279,9 +275,6 @@ span.m-left{
   width: 650px;
 }
 
-#greeting-container {
-  margin-top: 20px;
-}
 
 #skills{
   height: 17vh;
@@ -453,4 +446,22 @@ div[class^='bar-'] {
 .map-div{
   display: flex;
   justify-content: space-around;
+} */
+
+/* New Styling */
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+.navbar-brand.abs
+    {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        text-align: center;
+    }
 }
