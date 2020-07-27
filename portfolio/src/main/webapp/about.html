@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <title>Lee's Portfolio</title>
-    <!-- <script src="script.js"></script> -->
     <!-- font style -->
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Muli:wght@300&display=swap" rel="stylesheet">
     <!-- contact icons  -->
@@ -23,12 +22,12 @@
     <link rel="stylesheet" href="style.css">
   </head>
 
-  <body>
+  <body onload="initMap()">
     <!-- nav bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="d-flex flex-grow-1">
             <span class="w-100 d-lg-none d-block"><!-- hidden spacer to center brand on mobile --></span>
-            <a class="navbar-brand d-none d-lg-inline-block" href="#">
+            <a class="navbar-brand d-none d-lg-inline-block" href="../index.html">
                 Lee
             </a>
             <a class="navbar-brand mx-auto d-lg-none d-inline-block" href="#">
@@ -43,7 +42,7 @@
         <div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar">
             <ul class="navbar-nav ml-auto flex-nowrap">
                 <li class="nav-item">
-                    <a href="../work.html" class="nav-link m-2 menu-item nav-active">Work</a>
+                    <a href="../portfolio.html" class="nav-link m-2 menu-item nav-active">Portfolio</a>
                 </li>
                 <li class="nav-item">
                     <a href="../resume.html" class="nav-link m-2 menu-item">Resume</a>
@@ -52,21 +51,38 @@
                     <a href="../about.html" class="nav-link m-2 menu-item">About</a>
                 </li>
                 <li class="nav-item">
-                    <a href="./contact" class="nav-link m-2 menu-item">Contact</a>
+                    <a href="../contact" class="nav-link m-2 menu-item">Contact</a>
                 </li>
             </ul>
         </div>
     </nav>
 
+    <!-- Main -->
+    <div class="container main-info-section">
+         <div class="row">
+            <h1>About Me</h1>
+            <div class="about-me-info">
+                <p>I am a rising sophomore at Yale University.  I am interested in UX and front-end development.
+                My goal is to make accessible and intuitive technology for everyone but especially for elders.
+                I am majoring in computer science while also taking classes in psychology and visual arts. In my free time, I enjoy making music,
+                creating art, baking pastries, and trying new things. </p>
+            </div>
+        </div>
+        <div class="row">
+            <h1 id="maptitle">Story Map</h1>
+            <div class="map-div">
+                <div id="map"></div>
+            </div>  
+        </div>
+        
+    </div>
+
     <!-- Footer -->
     <footer class="footer font-small special-color-dark pt-4">
         <div class="container">
-            <!-- <div class="text-center py-2">
-               see more on:
-            </div> -->
             <!-- Social buttons -->
             <ul class="list-unstyled list-inline text-right">
-            <li> fine me on: </li>
+            <li> find me on: </li>
             <li class="list-inline-item">
                 <a href="https://www.linkedin.com/in/lee-chen/" class="btn-floating btn-li mx-1">
                 <i class="fab fa-linkedin-in"> </i>
@@ -80,5 +96,10 @@
             </ul>
         </div>
     </footer>
+
+    <script src="../about.js"></script>
+    <!-- key=AIzaSyDTkaBUiXmTof1JeMXiplYaeTZ39ms4DNU -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTkaBUiXmTof1JeMXiplYaeTZ39ms4DNU&callback=initMap">
+    </script> 
   </body>
 </html> 
