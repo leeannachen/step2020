@@ -9,72 +9,31 @@ html {
   scroll-behavior: smooth;
 }
 
-/* nav ul,
-.main-info-section,
-.work-category {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-} */
+.main-info-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 140px);
+} 
 
-/* header {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 20px 0;
-} */
-
-/* .navbar{
-   background-color: #343434;
-   position: fixed;
-   top: 0;
-   width: 100%;
-   z-index: 5;
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px 0;
 }
 
-.navbar h1{
-  text-transform: none;
-  color: red;
+header h1, 
+header a,
+.text p,
+.about h1,
+.skills h1,
+.work h1,
+.contact h1 {
+    color: black;
 }
 
-.navbar a,
-.navbar h1{
-  color: white;
-}
-
-.navbar ul {
-  list-style-type: none;
-}
-
-.navbar li{
-  float: right;
-}
-
-.navbar li a{
-  display:black;
-  color:white;
-  text-align:center;
-  padding: 20px 20px 20px 20px;
-  text-decoration: none;
-}
-
-.navbar a:hover:not(.active) {
-  background-color: white;
-  color: black;
-  transition: all .5s;
-} */
-
-/* header h1, header a,
- .text p,
- .about h1,
- .skills h1,
- .work h1,
- .contact h1,
- {
-   color: black;
-}
-
-a {
+/* a {
   text-decoration: none;
   font-size: 1rem;
   text-transform: uppercase;
@@ -82,92 +41,92 @@ a {
   top: 50%;
   bottom: 50%;
   transform: translateY(-50%);
-}
+} */
 
-.main-info-section {
+/* .main-info-section {
   padding-top: 5vh;
   height: 75vh;
-}
+} */
 
-.text {
+/* .text {
   margin-top: 120px;
-}
+} */
 
 .text h1 {
-  color: black;
-  font-size: 5rem;
+    color: black;
+    font-size: 5rem;
 }
 
 .text span{
-  display: inline-block;
+    display: inline-block;
 }
 
 span:hover {
-  color: red;
-  transition: all .5s;
+    color: red;
+    transition: all .5s;
 }
 
 span.name {
-  color: red;
+    color: red;
 }
 
 span.m-left{
-  margin-left: -10px;
+    margin-left: -10px;   
 }
 
 .text p {
-  letter-spacing: 3px;
-  word-spacing: 10px;
-  font-size: .8rem;
+    letter-spacing: 3px;
+    word-spacing: 10px;
+    font-size: .8rem;
 }
 
 .text a {
-
-  padding: 12px 25px;
-  background-color: none;
-  border: 3px solid red;
-  color: red;
-  font-size: .8rem;
-  letter-spacing: 2px;
-  position: relative;
-  top: 80px;
-  overflow: hidden;
-  transition: .5s;
-  display: inline-block;
+    padding: 12px 25px;
+    background-color: none;
+    border: 3px solid red;
+    color: red;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    overflow: hidden;
+    transition: .5s;
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
 }
 
 .text a:hover{
-  color: white
+    color: white
 }
 
 .text a::before {
-  content: '';
-  background-color: red;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 0%;
-  z-index: -1;
-  transition: .5s;
+    content: '';
+    background-color: red;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 0%;
+    z-index: -1;
+    transition: .5s;
 }
 
 .text a:hover::before {
-  height: 100%;
+    height: 100%;
 }
 
 .avatar img {
-  width: 425px;
-  border-radius:90% 1% 1%;
+    width: 425px;
+    border-radius:90% 1% 1%;
+    float:right;
 }
 
 .center {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, -50%);
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.fa-chevron-down {
+/*  .fa-chevron-down {
   color: #c0c0c038;
   position: absolute;
   left: 50%;
@@ -448,7 +407,20 @@ div[class^='bar-'] {
   justify-content: space-around;
 } */
 
+
+
+
 /* New Styling */
+/* Header Styling */
+.bg-dark {
+    background-color: black!important;
+}
+
+.nav-link {
+    color: white !important;
+}
+
+/* Footer Styling */
 .footer {
     position: fixed;
     left: 0;
@@ -456,6 +428,38 @@ div[class^='bar-'] {
     width: 100%;
 }
 
+.footer a {
+    text-decoration: none;
+    color: black;
+}
+
+/*  tablets and smaller */
+/* bootstrap size md */
+@media (max-width: 768px) {
+    /* .avatar {
+        margin-top: 80px;
+    } */
+} 
+
+/*  desktops and smaller */
+/* bootstrap size lg */
+@media (max-width: 960px) {
+    .avatar img{
+        float: none;
+        border-radius: 50%;
+        margin-top: 80px;
+    }
+
+    .avatar {
+        text-align: center;
+    }
+
+    .hello {
+        padding-bottom: 80px;
+    }
+} 
+
+/* bigger than tablets */
 @media (min-width: 768px) {
 .navbar-brand.abs
     {
