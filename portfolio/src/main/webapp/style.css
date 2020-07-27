@@ -73,7 +73,8 @@ header h1, header a,
  .about h1,
  .skills h1,
  .work h1,
- .contact h1{
+ .contact h1,
+ {
    color: black;
 }
 
@@ -181,12 +182,12 @@ span.m-left{
 .fa-chevron-down:hover {
   color: red;
   transition: .6s;
-} 
+}
 
 #to-about,
 #to-skills,
 #to-contact {
-  margin-top: 30px; 
+  margin-top: 30px;
 }
 
 .space,
@@ -200,12 +201,13 @@ span.m-left{
 }
 
 .contact {
-  height: 70vh;
+  height: 65vh;
   margin-top: 15vh;
 }
 
 .about h1,
-.contact h1{
+.contact h1,
+.comments h1{
   font-size:10rem;
   z-index: 0;
   opacity: .1;
@@ -237,7 +239,7 @@ span.m-left{
 .about-me-info p:last-child,
 .contact-me p:nth-child(2),
 .contact-me p:last-child  {
- margin-top:30px; 
+ margin-top:30px;
 }
 
 .about img,
@@ -289,10 +291,15 @@ span.m-left{
   height: 70vh;
 }
 
-.skills h1 {
+.skills h1,
+#maptitle {
   text-align: right;
   font-size: 10rem;
   color: #C0C0C0;
+}
+
+#maptitle{
+  color: black;
 }
 
 .skills-info {
@@ -411,7 +418,7 @@ div[class^='bar-'] {
 }
 
 .comments {
-    height: 100vh;
+    height: 80vh;
     top: 50%;
     bottom: 50%;
 }
@@ -441,4 +448,9 @@ div[class^='bar-'] {
 #message-box {
     height: 200px;
     width: 600px;
+}
+
+.map-div{
+  display: flex;
+  justify-content: space-around;
 }
