@@ -31,6 +31,7 @@ header a,
 .work h1,
 .contact h1 {
     color: black;
+    font-size: 20px;
 }
 
 /* a {
@@ -77,7 +78,7 @@ span.m-left{
 .text p {
     letter-spacing: 3px;
     word-spacing: 10px;
-    font-size: .8rem;
+    font-size: 20px;
 }
 
 .text a {
@@ -92,6 +93,7 @@ span.m-left{
     display: inline-block;
     position: absolute;
     bottom: 0;
+    font-weight: bold;
 }
 
 .text a:hover{
@@ -377,6 +379,10 @@ div[class^='bar-'] {
 
 
 /* New Styling */
+/* Nav Bar */
+.navbar {
+    font-size:20px;
+}
 /* Header Styling */
 .bg-dark {
     background-color: black!important;
@@ -398,6 +404,34 @@ div[class^='bar-'] {
     text-decoration: none;
     color: black;
 }
+
+
+
+
+/* about page */
+.about-section {
+    display: flex;
+    overflow: scroll;
+}
+
+.block {
+    display: block;
+}
+
+.card {
+    padding: 3vh;
+    margin-bottom: 5vh;
+    text-size-adjust: auto;
+}
+
+.card-header {
+    font-size: 40px;
+}
+
+.card p {
+    font-size: 20px;
+}
+
 
 /*  tablets and smaller */
 /* bootstrap size md */

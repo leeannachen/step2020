@@ -19,10 +19,14 @@
     <!-- Meta for Google Client ID -->
     <meta name="google-signin-client_id" content="212552288471-sc76ngldi2jo6u3qva3hogvdt5i49cgr.apps.googleusercontent.com">
     <!-- stylesheet -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">.
+    <!-- Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTkaBUiXmTof1JeMXiplYaeTZ39ms4DNU"></script>
+    <!-- script -->
+    <script src="../about.js"></script>
   </head>
 
-  <body onload="initMap()">
+  <body onload="createMap()">
     <!-- nav bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="d-flex flex-grow-1">
@@ -58,23 +62,32 @@
     </nav>
 
     <!-- Main -->
-    <div class="container main-info-section">
-         <div class="row">
-            <h1>About Me</h1>
-            <div class="about-me-info">
+    <div class="container main-info-section about-section">
+        <div class="block">
+            <div class="card w-100  text-white bg-dark">
+            <div class="card-header">
+                About Me
+            </div>
+            <div class="card-body">
                 <p>I am a rising sophomore at Yale University.  I am interested in UX and front-end development.
                 My goal is to make accessible and intuitive technology for everyone but especially for elders.
                 I am majoring in computer science while also taking classes in psychology and visual arts. In my free time, I enjoy making music,
-                creating art, baking pastries, and trying new things. </p>
+                creating art, baking pastries, and trying new things.</p>
+                <footer ></footer> 
             </div>
-        </div>
-        <div class="row">
-            <h1 id="maptitle">Story Map</h1>
-            <div class="map-div">
-                <div id="map"></div>
-            </div>  
-        </div>
-        
+            </div>
+
+            <div class="card w-100  text-white bg-dark" hidden>
+            <div class="card-header">
+                Mapping Out My Story 
+            </div>
+            <div class="card-body">
+                <div class="map-div">
+                        <div id="map"></div>
+                </div>  
+            </div>
+            </div>
+        </div>     
     </div>
 
     <!-- Footer -->
@@ -97,9 +110,8 @@
         </div>
     </footer>
 
-    <script src="../about.js"></script>
     <!-- key=AIzaSyDTkaBUiXmTof1JeMXiplYaeTZ39ms4DNU -->
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTkaBUiXmTof1JeMXiplYaeTZ39ms4DNU&callback=initMap">
-    </script> 
+    <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTkaBUiXmTof1JeMXiplYaeTZ39ms4DNU&callback=initMap">
+    </script>  -->
   </body>
 </html> 

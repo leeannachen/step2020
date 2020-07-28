@@ -14,10 +14,10 @@
 
 
 window.onload = function(){
-    loadComments();
-    getDropdownVal();
+    // loadComments();
+    // getDropdownVal();
     initMap();
-    console.log("I see you are looking at the console")
+    // console.log("I see you are looking at the console")
 }
 
 // function addRandomGreeting() {
@@ -117,6 +117,7 @@ function changeDropdownVal() {
 
 // Create greyscale map with a marker 
 function initMap() {
+    console.log("init map");
     // Create a new StyledMapType object, passing it an array of styles,
     // and the name to be displayed on the map type control.
     var styledMapType = new google.maps.StyledMapType(
