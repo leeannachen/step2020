@@ -136,32 +136,11 @@ span.m-left{
     opacity: .1;
 }
 
-.about-me-info,
-.contact-me{
-    max-width: 900px;
-    background-color: #343434;
-    box-shadow: 0 0 1.2rem rgba(0, 0, 0, 0.5);
-    padding: 50px;
-    position: relative;
-    top: -70px;
-    left: 50%;
-    right: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
-}
-
 .about-me-info p,
 .contact-me p {
     font-size: 1.3rem;
     color: white;
     margin: 10px;
-}
-
-.about-me-info p:nth-child(2),
-.about-me-info p:last-child,
-.contact-me p:nth-child(2),
-.contact-me p:last-child  {
-     margin-top:30px;
 }
 
 /* .about img,
@@ -316,14 +295,12 @@ div[class^='bar-'] {
 .contact-me a{
   color:white;
   margin-top: 40px;
-  margin-bottom: -30px;
   position: relative;
 }
 
 .contact-me a:hover {
-  color:#c0c0c0;
-  transform: scale(1.0);
-  transition: transform .5s;
+  transform: rotate(1turn);;
+  transition: transform 1.5s;
   position: inherit;
 }
 
@@ -386,6 +363,13 @@ div[class^='bar-'] {
 .navbar {
     font-size:20px;
 }
+
+.navbar-dark .navbar-brand {
+    color: red;
+    font-weight: bold;
+    letter-spacing: .25rem;
+}
+
 /* Header Styling */
 .bg-dark {
     background-color: black!important;
