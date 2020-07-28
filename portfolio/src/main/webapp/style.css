@@ -302,6 +302,7 @@ div[class^='bar-'] {
   transform: rotate(1turn);;
   transition: transform 1.5s;
   position: inherit;
+  color: red;
 }
 
 .contact-me {
@@ -368,6 +369,7 @@ div[class^='bar-'] {
     color: red;
     font-weight: bold;
     letter-spacing: .25rem;
+    font-size: 25px;
 }
 
 /* Header Styling */
