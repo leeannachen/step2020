@@ -31,6 +31,7 @@ header a,
 .work h1,
 .contact h1 {
     color: black;
+    font-size: 20px;
 }
 
 /* a {
@@ -77,7 +78,7 @@ span.m-left{
 .text p {
     letter-spacing: 3px;
     word-spacing: 10px;
-    font-size: .8rem;
+    font-size: 20px;
 }
 
 .text a {
@@ -92,6 +93,7 @@ span.m-left{
     display: inline-block;
     position: absolute;
     bottom: 0;
+    font-weight: bold;
 }
 
 .text a:hover{
@@ -126,88 +128,33 @@ span.m-left{
     transform: translate(-50%, -50%);
 }
 
-/*  .fa-chevron-down {
-  color: #c0c0c038;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.fa-chevron-down:hover {
-  color: red;
-  transition: .6s;
-}
-
-#to-about,
-#to-skills,
-#to-contact {
-  margin-top: 30px;
-}
-
-.space,
-.contact{
-  height: 13vh;
-}
-
-.about {
-  height: 70vh;
-  margin-top: 8vh;
-}
-
-.contact {
-  height: 65vh;
-  margin-top: 15vh;
-}
-
 .about h1,
-.contact h1,
+.contact-section h1,
 .comments h1{
-  font-size:10rem;
-  z-index: 0;
-  opacity: .1;
-}
-
-.about-me-info,
-.contact-me{
-  max-width: 900px;
-  background-color: #343434;
-  box-shadow: 0 0 1.2rem rgba(0, 0, 0, 0.5);
-  padding: 50px;
-  position: relative;
-  top: -70px;
-  left: 50%;
-  right: 50%;
-  transform: translateX(-50%);
-  z-index: 1;
+    font-size:10rem;
+    z-index: 0;
+    opacity: .1;
 }
 
 .about-me-info p,
 .contact-me p {
-  font-size: 1.3rem;
-  color: white;
-
-  margin: 10px;
+    font-size: 1.3rem;
+    color: white;
+    margin: 10px;
 }
 
-.about-me-info p:nth-child(2),
-.about-me-info p:last-child,
-.contact-me p:nth-child(2),
-.contact-me p:last-child  {
- margin-top:30px;
-}
-
-.about img,
+/* .about img,
 .contact img {
-  width: 300px;
-  position: relative;
-  top: -200px;
-  left: 50%;
-  right: 50%;
-  transform: translateX(100%);
-  border-radius: 50%;
-}
+    width: 300px;
+    position: relative;
+    top: -200px;
+    left: 50%;
+    right: 50%;
+    transform: translateX(100%);
+    border-radius: 50%;
+} */
 
+/*  
 .secret-message{
   width: 300px;
   position: relative;
@@ -343,19 +290,19 @@ div[class^='bar-'] {
 .bar-java {
   width: calc(0 - 6px);
 }
+ */
 
 .contact-me a{
   color:white;
   margin-top: 40px;
-  margin-bottom: -30px;
   position: relative;
 }
 
 .contact-me a:hover {
-  color:#c0c0c0;
-  transform: scale(1.0);
-  transition: transform .5s;
+  transform: rotate(1turn);;
+  transition: transform 1.5s;
   position: inherit;
+  color: red;
 }
 
 .contact-me {
@@ -364,6 +311,8 @@ div[class^='bar-'] {
   justify-content: space-around;
   padding: 40px 20px 40px 20px;
 }
+
+/*  
 
 .contact img {
     opacity: .25;
@@ -411,6 +360,18 @@ div[class^='bar-'] {
 
 
 /* New Styling */
+/* Nav Bar */
+.navbar {
+    font-size:20px;
+}
+
+.navbar-dark .navbar-brand {
+    color: red;
+    font-weight: bold;
+    letter-spacing: .25rem;
+    font-size: 25px;
+}
+
 /* Header Styling */
 .bg-dark {
     background-color: black!important;
@@ -432,6 +393,34 @@ div[class^='bar-'] {
     text-decoration: none;
     color: black;
 }
+
+
+
+
+/* about page */
+.about-section {
+    display: flex;
+    overflow: scroll;
+}
+
+.block {
+    display: block;
+}
+
+.card {
+    padding: 3vh;
+    margin-bottom: 5vh;
+    text-size-adjust: auto;
+}
+
+.card-header {
+    font-size: 40px;
+}
+
+.card p {
+    font-size: 20px;
+}
+
 
 /*  tablets and smaller */
 /* bootstrap size md */
